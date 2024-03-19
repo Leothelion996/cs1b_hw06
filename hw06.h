@@ -7,9 +7,31 @@
 #define _H_
 
 /**********************************************************
- *
- *********************************************************/
+ *program name and description                            *
+ **********************************************************/
 
 #include <iostream>
+
+struct slist 
+{
+    int length;
+    sentry *first;
+    sentry *last;
+}
+
+struct sentry
+{
+    slist *list;
+    sentry *next;
+    sentry *prev;
+    bookEntry *book;
+}
+
+struct bookEntry
+{
+  int isbn;
+  std::string author;
+  std::string title;
+}
 
 #endif
