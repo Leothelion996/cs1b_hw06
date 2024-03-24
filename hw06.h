@@ -13,38 +13,37 @@
 #include <iostream>
 #include <string>
 #include <fstream>
-#include <cctype>
 
-struct slist;
-struct sentry;
+struct bookList;
 struct bookEntry;
+struct bookData;
 
-struct slist 
+struct bookList
 {
   int length;
-  sentry *first;
-  sentry *last;
-};
-
-struct sentry
-{
-  slist *list;
-  sentry *next;
-  sentry *prev;
-  bookEntry *data;
+  bookEntry *first;
+  bookEntry *last;
 };
 
 struct bookEntry
 {
-  int isbn;
+  bookList *list;
+  bookEntry *next;
+  bookEntry *prev;
+  bookData *data;
+};
+
+struct bookData
+{
+  std::string isbn;
   std::string author;
   std::string title;
 };
 
 void addBook();
 void delBook();
-void showbook();
-void showbooks();
+void showBook();
+void showBooks();
 void popList();
 void menu();
 
