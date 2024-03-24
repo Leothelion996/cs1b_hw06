@@ -44,7 +44,7 @@ void addBook();
 void delBook();
 void showBook();
 void showBooks();
-void popList();
+bookList* popList();
 void menu();
 
 #endif

@@ -2,56 +2,13 @@
 
 int main ()
 {
-  //checks if Text file for Database exists.
-  std::ifstream strt("booksdb.txt", std::fstream::app);
-
-  if(!strt)
-  {
-    return -1;
-  }
-
   bookList *bList;
-  bookEntry *loop, *rec;
-  std::string author, title, isbn, space;
 
-  // popList();
+  bList = popList();
 
-  bList = new bookList;
-  bList->length = 0;
-  bList->first = nullptr;
-  bList->last = nullptr;
+  std::cout << bList->first << "\n" << bList->last << "\n" << bList->length << "\n";
 
-  while(getline(fin, title) && getline(fin, author) && getline(fin, isbn) && getline(std::cin, space))
-  {
-    loop = new bookEntry;
-    loop->list = nullptr;
-    loop->next = nullptr;
-    loop->prev = nullptr;
-    loop->data = nullptr;
-
-    if (bList->first == nullptr)
-    {
-      bList->first = loop;
-    }
-    else
-    {
-      loop->prev = rec;
-      rec->next = loop;
-    }
-    bList->last = loop;
-    rec = loop;
-    rec->data->title = title;
-    rec->data->author = author;
-    rec->data->isbn = isbn;
-    ++bList->length;
-    
-
-  }
-
-
-
-
-
+  std::cout << bList->last->data->isbn << "\n" << bList->last->data->author << "\n" << bList->last->data->title << "\n";
   // menu();
 
   return 0;

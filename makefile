@@ -2,8 +2,13 @@ CC = g++
 
 all: hw06
 
+alldb: debug
+
 hw06: addbook.o delbook.o showbook.o showbooks.o poplist.o menu.o hw06.cpp hw06.h
 	$(CC) hw06.cpp -o hw06 addbook.o delbook.o showbook.o showbooks.o poplist.o menu.o
+
+debug: addbook.o delbook.o showbook.o showbooks.o poplist.o menu.o hw06.cpp hw06.h
+	$(CC) -g hw06.cpp -o hw06 addbook.o delbook.o showbook.o showbooks.o poplist.o menu.o
 
 addbook.o: addbook.cpp hw06.h
 	$(CC) -c addbook.cpp -o addbook.o
