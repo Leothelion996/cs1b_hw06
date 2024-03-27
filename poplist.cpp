@@ -5,13 +5,13 @@ bookList* popList()
   //checks if Text file for Database exists.
   std::ifstream strt("booksdb.txt", std::fstream::app);
 
-//   if(!strt)
-//   {
-//     return -1;
-//   }
+  if(!strt)
+  {
+    return nullptr;
+  }
 
-  bookList *bList;
-  bookEntry *loop, *rec;
+  bookList *bList = nullptr;
+  bookEntry *loop, *rec = nullptr;
   bookData *data;
   std::string author, title, isbn, space;
 
@@ -46,9 +46,8 @@ bookList* popList()
     rec->data->isbn = isbn;
     rec->data->author = author;
     rec->data->title = title;
+    space = space;
     ++bList->length;
   }
-
   return bList;
-
 }

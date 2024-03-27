@@ -40,11 +40,11 @@ struct bookData
   std::string title;
 };
 
-void addBook();
-void delBook();
-void showBook();
-void showBooks();
+bookList* addBook(bookList* bList);
+bookList* delBook(bookList* bList);
+void showBook(bookList* bList);
+void showBooks(bookList* bList);
 bookList* popList();
-void menu();
+int menu(bookList* bList);
 
 #endif

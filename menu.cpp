@@ -1,6 +1,6 @@
 #include "hw06.h"
 
-void menu()
+int menu(bookList* bList)
 {
   //prompts the user with input options.
   std::cout << "Select from the following option:\n1. Add Book\n2. Delete Book\n3. Display a book\n";
@@ -23,19 +23,24 @@ void menu()
   {
     case 1:
       std::cout <<"Input 1\n";
-    //   addBook();
+      addBook(bList);
+      return 1;
       break;
     case 2:
       std::cout <<"Input 2\n";
+      delBook(bList);
       break;
     case 3:
       std::cout <<"Input 3\n";
+      showBook(bList);
       break;
     case 4:
       std::cout <<"Input 4\n";
+      showBooks(bList);
       break;
     case 5:
       std::cout <<"Input 5\n";
-      return;
+      return 5;
   }
+  return 0;
 }
