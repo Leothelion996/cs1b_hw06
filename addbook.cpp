@@ -33,6 +33,11 @@ bookList* addBook(bookList* bList)
   data->title = title;
   ++bList->length;
 
+//   delete pointer;
+//   delete loop;
+//   delete data;
+  
+
   return bList;
 
 }

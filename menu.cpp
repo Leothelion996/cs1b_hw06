@@ -22,24 +22,18 @@ int menu(bookList* bList)
   switch (input)
   {
     case 1:
-      std::cout <<"Input 1\n";
       addBook(bList);
-      return 1;
       break;
     case 2:
-      std::cout <<"Input 2\n";
       delBook(bList);
       break;
     case 3:
-      std::cout <<"Input 3\n";
       showBook(bList);
       break;
     case 4:
-      std::cout <<"Input 4\n";
       showBooks(bList);
       break;
     case 5:
-      std::cout <<"Input 5\n";
       return 5;
   }
   return 0;

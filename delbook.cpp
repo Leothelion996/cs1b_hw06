@@ -7,8 +7,6 @@ bookList* delBook(bookList* bList)
   bookEntry *next = pointer;
   bookEntry *del = pointer;
 
-  std::ifstream strt("booksdb.txt", std::fstream::app);
-
   std::cout << "which book would you like to delete?\n";
 
   //shows a list of all book titles
@@ -70,15 +68,10 @@ bookList* delBook(bookList* bList)
   }
   
 
-    std::cout << "Del: " << del->data->title;
-    std::cout << "\nDel: " << del << "\n";
-    
-
+    showBooks(bList);
     delete del->data;
     delete del;
 
-    std::cout << "Del: " << del->data->title;
-    std::cout << "\nDel: " << del << "\n";
 
 
   return bList;

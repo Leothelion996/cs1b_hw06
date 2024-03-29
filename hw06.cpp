@@ -15,5 +15,24 @@ int main ()
     flag = menu(bList);
   }
 
+  if (flag == 5)
+  {
+    std::ofstream ogfile("booksdb.txt");
+
+    bookEntry *current = bList->first;
+    while(current->data != nullptr)
+    {
+      ogfile << current->data->isbn << std::endl;
+      ogfile << current->data->author << std::endl;
+      ogfile << current->data->title << std::endl << std::endl;
+      current = current->next;
+    }
+    ogfile.close(); //closes out program
+    // delete current; //deallocate bookEntry Current
+  }  
+
+  delete bList;
+
+
   return 0;
 }
