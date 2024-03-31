@@ -44,7 +44,7 @@ bookList* addBook(bookList* bList);
 bookList* delBook(bookList* bList);
 void showBook(bookList* bList);
 void showBooks(bookList* bList);
-bookList* popList();
+bookList* popList(bookList* bList);
 int menu(bookList* bList);
 
 #endif

@@ -8,7 +8,7 @@ bookList* addBook(bookList* bList)
 
   bookEntry *loop = nullptr;
   bookData *data;
-  std::string author, title, isbn, space;
+  std::string author, title, isbn;
 
   data = new bookData;
 
@@ -19,6 +19,7 @@ bookList* addBook(bookList* bList)
   loop->data = data;
 
   pointer->next = loop;
+  bList->last = loop;
 
   std::cout << "Adding a new book.\nPlease insert ISBN.\n";
   std::cin.ignore(10,'\n');
@@ -33,11 +34,12 @@ bookList* addBook(bookList* bList)
   data->title = title;
   ++bList->length;
 
-//   delete pointer;
-//   delete loop;
-//   delete data;
+  pointer = nullptr;
+  delete pointer;
+  loop = nullptr;
+  delete loop;
+  data = nullptr;
+  delete data;
   
-
   return bList;
-
 }

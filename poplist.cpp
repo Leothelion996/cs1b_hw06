@@ -1,6 +1,6 @@
 #include "hw06.h"
 
-bookList* popList()
+bookList* popList(bookList* bList)
 {
   //checks if Text file for Database exists.
   std::ifstream strt("booksdb.txt", std::fstream::app);
@@ -10,12 +10,12 @@ bookList* popList()
     return nullptr;
   }
 
-  bookList *bList = nullptr;
+  // bookList *bList = nullptr;
   bookEntry *loop, *rec = nullptr;
   bookData *data;
   std::string author, title, isbn, space;
 
-  bList = new bookList;
+  // bList = new bookList;
   bList->length = 0;
   bList->first = nullptr;
   bList->last = nullptr;
@@ -48,6 +48,17 @@ bookList* popList()
     rec->data->title = title;
     space = space;
     ++bList->length;
+
+    // data = nullptr;
+    // loop = nullptr;
+
+    // delete data;
+    // delete loop;
+    // delete rec;
   }
+
+  //deallocate
+    
+    
   return bList;
 }

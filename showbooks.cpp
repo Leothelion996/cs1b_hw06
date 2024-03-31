@@ -6,6 +6,8 @@ void showBooks(bookList* bList)
 
   pointer = bList->first;
   int i = 0;
+
+  std::cout <<"length: " <<bList->length << "\n";
   
   while (i < bList->length)
   {

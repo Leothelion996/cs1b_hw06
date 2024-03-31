@@ -1,14 +1,13 @@
 #include "hw06.h"
 
+void deallocateList(bookList *bList); //added function to clean code. 
+
 int main ()
 {
-  bookList *bList;
+  bookList *bList = new bookList;
   int flag = 0;
 
-  bList = popList();
-  //for checking what populated bList
-  std::cout << bList->first << "\n" << bList->last << "\n" << bList->length << "\n";
-  std::cout << bList->last->data->isbn << "\n" << bList->last->data->author << "\n" << bList->last->data->title << "\n";
+  bList = popList(bList); //populates items from the txt file
   
   while(flag != 5)
   {
@@ -20,7 +19,8 @@ int main ()
     std::ofstream ogfile("booksdb.txt");
 
     bookEntry *current = bList->first;
-    while(current->data != nullptr)
+    
+    while(current != nullptr)
     {
       ogfile << current->data->isbn << std::endl;
       ogfile << current->data->author << std::endl;
@@ -28,11 +28,36 @@ int main ()
       current = current->next;
     }
     ogfile.close(); //closes out program
-    // delete current; //deallocate bookEntry Current
+    delete current; //deallocate bookEntry Current
   }  
+
+  //deallocating list
+  deallocateList(bList);
 
   delete bList;
 
-
   return 0;
 }
+
+void deallocateList(bookList *bList)
+{
+  bookEntry *current = bList->first;
+  bookEntry *next = nullptr;
+
+  for(int i = 0; i < bList->length; i++)
+  {
+    if(current->next != nullptr)
+    {
+      next = current->next;
+      current->prev = nullptr;
+      delete current;
+      current = next;
+      bList->first = current;
+    } 
+    else
+    {
+      current->prev = nullptr;
+      delete current;
+    }
+  }
+};
