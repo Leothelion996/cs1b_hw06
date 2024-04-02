@@ -1,0 +1,279 @@
+Script started on 2024-04-01 23:57:15-07:00 [TERM="xterm-256color" TTY="/dev/pts/0" COLUMNS="141" LINES="26"]
+]0;stdsoul@csvm: ~/Documents/CS1B/hw06/cs1b_hw06[01;32mstdsoul@csvm[00m:[01;34m~/Documents/CS1B/hw06/cs1b_hw06[00m$ make all [Kdb[K[K
+g++ -c addbook.cpp -o addbook.o
+g++ -c delbook.cpp -o delbook.o
+g++ -c showbook.cpp -o showbook.o
+g++ -c showbooks.cpp -o showbooks.o
+g++ -c poplist.cpp -o poplist.o
+g++ -c menu.cpp -o menu.o
+g++ hw06.cpp -o hw06 addbook.o delbook.o showbook.o showbooks.o poplist.o menu.o
+]0;stdsoul@csvm: ~/Documents/CS1B/hw06/cs1b_hw06[01;32mstdsoul@csvm[00m:[01;34m~/Documents/CS1B/hw06/cs1b_hw06[00m$ ./hw06
+Select from the following option:
+1. Add Book
+2. Delete Book
+3. Display a book
+4. Display all books
+5. Save and Exit
+Enter your choice: 1
+Adding a new book.
+Please insert ISBN.
+123145
+
+Please insert Book Author: auth 1
+
+Please insert Book Title: title 1
+Select from the following option:
+1. Add Book
+2. Delete Book
+3. Display a book
+4. Display all books
+5. Save and Exit
+Enter your choice: 1
+Adding a new book.
+Please insert ISBN.
+45645
+
+Please insert Book Author: at uth 2
+
+Please insert Book Title: title 2
+Select from the following option:
+1. Add Book
+2. Delete Book
+3. Display a book
+4. Display all books
+5. Save and Exit
+Enter your choice: 1
+Adding a new book.
+Please insert ISBN.
+4535
+
+Please insert Book Author: atuh   uth 3
+
+Please insert Book Title: title 3
+Select from the following option:
+1. Add Book
+2. Delete Book
+3. Display a book
+4. Display all books
+5. Save and Exit
+Enter your choice: 1
+Adding a new book.
+Please insert ISBN.
+4561
+
+Please insert Book Author: auth 4
+
+Please insert Book Title: title 4
+Select from the following option:
+1. Add Book
+2. Delete Book
+3. Display a book
+4. Display all books
+5. Save and Exit
+Enter your choice: 1
+Adding a new book.
+Please insert ISBN.
+5434
+
+Please insert Book Author: 548   auth 5
+
+Please insert Book Title: title lastes   t
+Select from the following option:
+1. Add Book
+2. Delete Book
+3. Display a book
+4. Display all books
+5. Save and Exit
+Enter your choice: 4
+length: 6
+Book #1
+ISBN: 12324
+Author: Author 1
+Title: Title 1
+
+Book #2
+ISBN: 123145
+Author: auth 1
+Title: title 1
+
+Book #3
+ISBN: 45645
+Author: auth 2
+Title: title 2
+
+Book #4
+ISBN: 4535
+Author: auth 3
+Title: title 3
+
+Book #5
+ISBN: 4561
+Author: auth 4
+Title: title 4
+
+Book #6
+ISBN: 5434
+Author: auth 5
+Title: title last
+
+Select from the following option:
+1. Add Book
+2. Delete Book
+3. Display a book
+4. Display all books
+5. Save and Exit
+Enter your choice: 5
+]0;stdsoul@csvm: ~/Documents/CS1B/hw06/cs1b_hw06[01;32mstdsoul@csvm[00m:[01;34m~/Documents/CS1B/hw06/cs1b_hw06[00m$ valgrind ./hw06
+==2477== Memcheck, a memory error detector
+==2477== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
+==2477== Using Valgrind-3.15.0 and LibVEX; rerun with -h for copyright info
+==2477== Command: ./hw06
+==2477== 
+Select from the following option:
+1. Add Book
+2. Delete Book
+3. Display a book
+4. Display all books
+5. Save and Exit
+Enter your choice: 1
+Adding a new book.
+Please insert ISBN.
+4687453
+
+Please insert Book Author: auth new 
+
+Please insert Book Title: title new 
+Select from the following option:
+1. Add Book
+2. Delete Book
+3. Display a book
+4. Display all books
+5. Save and Exit
+Enter your choice: 2
+which book would you like to delete?
+#1: Title 1.
+#2: title 1.
+#3: title 2.
+#4: title 3.
+#5: title 4.
+#6: title last.
+#7: title new .
+2
+Select from the following option:
+1. Add Book
+2. Delete Book
+3. Display a book
+4. Display all books
+5. Save and Exit
+Enter your choice: 4
+length: 6
+Book #1
+ISBN: 12324
+Author: Author 1
+Title: Title 1
+
+Book #2
+ISBN: 45645
+Author: auth 2
+Title: title 2
+
+Book #3
+ISBN: 4535
+Author: auth 3
+Title: title 3
+
+Book #4
+ISBN: 4561
+Author: auth 4
+Title: title 4
+
+Book #5
+ISBN: 5434
+Author: auth 5
+Title: title last
+
+Book #6
+ISBN: 4687453
+Author: auth new 
+Title: title new 
+
+Select from the following option:
+1. Add Book
+2. Delete Book
+3. Display a book
+4. Display all books
+5. Save and Exit
+Enter your choice: 5
+==2477== 
+==2477== HEAP SUMMARY:
+==2477==     in use at exit: 0 bytes in 0 blocks
+==2477==   total heap usage: 24 allocs, 24 frees, 101,664 bytes allocated
+==2477== 
+==2477== All heap blocks were freed -- no leaks are possible
+==2477== 
+==2477== For lists of detected and suppressed errors, rerun with: -s
+==2477== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)
+]0;stdsoul@csvm: ~/Documents/CS1B/hw06/cs1b_hw06[01;32mstdsoul@csvm[00m:[01;34m~/Documents/CS1B/hw06/cs1b_hw06[00m$ git log
+[?1h=[33mcommit edc7930619f552351063b9dc6f4cfae27a55aaf6[m[33m ([m[1;36mHEAD -> [m[1;32mmain[m[33m, [m[1;31morigin/main[m[33m, [m[1;31morigin/HEAD[m[33m)[m[m
+Author: Leonardo Herrera <leonardo.herrera1996@yahoo.com>[m
+Date:   Mon Apr 1 22:24:44 2024 -0700[m
+[m
+    completed program. Removed memory Leaks.[m
+[m
+[33mcommit c64a9720cae3d0f2f15439a90a766ffccdae8954[m[m
+Author: Leonardo Herrera <leonardo.herrera1996@yahoo.com>[m
+Date:   Sun Mar 31 16:49:12 2024 -0700[m
+[m
+    done with the assignment, Working on data leaks.[m
+[m
+[33mcommit 94df482a2e9485f4ac8446d1f113b6f8c3a167ff[m[m
+Author: Leonardo Herrera <leonardo.herrera1996@yahoo.com>[m
+Date:   Thu Mar 28 20:20:08 2024 -0700[m
+[m
+    completed all functions. Working on patching memory leaks.[m
+[m
+[33mcommit 9ea2b1ff6aba9663e4deaf693b875fa135fda91a[m[m
+Author: Leonardo Herrera <leonardo.herrera1996@yahoo.com>[m
+Date:   Tue Mar 26 20:57:48 2024 -0700[m
+[m
+    finished all funtions besides save and close.[m
+[m
+[33mcommit c04fc0294dc523adf127ddb7042e66375f79875f[m[m
+:[K[KAuthor: Leonardo Herrera <leonardo.herrera1996@yahoo.com>[m
+:[K[KDate:   Sun Mar 24 16:28:17 2024 -0700[m
+:[K[K[m
+:[K[K    finished popList.[m
+:[K[K[m
+:[K[K[33mcommit 328a5d9d2afdb4bccb2cc847a159174edf4a2f7e[m[m
+:[K[KAuthor: Leonardo Herrera <leonardo.herrera1996@yahoo.com>[m
+:[K[KDate:   Sat Mar 23 19:25:04 2024 -0700[m
+:[K[K[m
+:[K[K    worked on main file. Finished Menu File[m
+:[K[K[m
+:[K[K[33mcommit 01ec6e60263113a5401314401b03740be1367a00[m[m
+:[K[KAuthor: Leonardo Herrera <leonardo.herrera1996@yahoo.com>[m
+:[K[KDate:   Tue Mar 19 18:35:40 2024 -0700[m
+:[K[K[m
+:[K[K    added the database text file. Created the Makefile. Finished the menu.[m
+:[K[K[m
+:[K[K[33mcommit 0147ed24831a80ae3df129308a8a25b3df49e3f4[m[m
+:[K[KAuthor: Leo-Win10 <leonardo.herrera1996@yahoo.com>[m
+:[K[KDate:   Tue Mar 19 13:52:50 2024 -0700[m
+:[K[K[m
+:[K[K    Added the sctruct. added a file with main[m
+:[K[K[m
+:[K[K[33mcommit 4492fafaf7e7d3eaef3f55ded4b99c3ba460e66c[m[m
+:[K[KAuthor: Leonardo Herrera <leonardo.herrera1996@yahoo.com>[m
+:[K[KDate:   Mon Mar 18 22:31:10 2024 -0700[m
+:[K[K[m
+:[K[K    created all the files needed for this program.[m
+:[K[K[m
+:[K[K[33mcommit bed54e11cc1023545199e7fd65c51b9518ff4536[m[m
+:[K[KAuthor: Leonardo Herrera <leonardo.herrera1996@yahoo.com>[m
+:[K[KDate:   Mon Mar 18 21:28:39 2024 -0700[m
+:[K[K[m
+:[K[K    first commit[m
+:[K[K[K[7m(END)[27m[K[K[K[7m(END)[27m[K[K[K[7m(END)[27m[K[K[K[7m(END)[27m[K[K[K[7m(END)[27m[K[K[K[7m(END)[27m[K[K[K[7m(END)[27m[K[K[K[7m(END)[27m[K[K[K[7m(END)[27m[K[K[K[7m(END)[27m[K[K[K[7m(END)[27m[K[K[K[7m(END)[27m[K[K[K[7m(END)[27m[K[K[K[7m(END)[27m[K[K[K[7m(END)[27m[K[K[K[7m(END)[27m[K[K[K[7m(END)[27m[K[K[K[7m(END)[27m[K[K[K[7m(END)[27m[K[K[K[7m(END)[27m[K[K[K[7m(END)[27m[K[K[K[7m(END)[27m[K[K[K[7m(END)[27m[K[K[K[7m(END)[27m[K[K[?1l>]0;stdsoul@csvm: ~/Documents/CS1B/hw06/cs1b_hw06[01;32mstdsoul@csvm[00m:[01;34m~/Documents/CS1B/hw06/cs1b_hw06[00m$ exit
+exit
+
+Script done on 2024-04-01 23:59:50-07:00 [COMMAND_EXIT_CODE="0"]

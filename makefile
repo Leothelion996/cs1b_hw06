@@ -30,3 +30,6 @@ menu.o: menu.cpp hw06.h
 
 clean:
 	rm hw06 *.o
+
+tar:
+	tar cf hw06.tar *.cpp *.txt *.h *.scr makefile
