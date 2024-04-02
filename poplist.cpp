@@ -10,12 +10,12 @@ bookList* popList(bookList* bList)
     return nullptr;
   }
 
-  // bookList *bList = nullptr;
+  //
   bookEntry *loop, *rec = nullptr;
   bookData *data;
   std::string author, title, isbn, space;
 
-  // bList = new bookList;
+  //
   bList->length = 0;
   bList->first = nullptr;
   bList->last = nullptr;
@@ -49,16 +49,8 @@ bookList* popList(bookList* bList)
     space = space;
     ++bList->length;
 
-    // data = nullptr;
-    // loop = nullptr;
-
-    // delete data;
-    // delete loop;
-    // delete rec;
+    
   }
 
-  //deallocate
-    
-    
   return bList;
 }

@@ -42,22 +42,18 @@ int main ()
 void deallocateList(bookList *bList)
 {
   bookEntry *current = bList->first;
-  bookEntry *next = nullptr;
+  // bookEntry *next = nullptr;
 
   for(int i = 0; i < bList->length; i++)
   {
-    if(current->next != nullptr)
-    {
-      next = current->next;
-      current->prev = nullptr;
-      delete current;
-      current = next;
-      bList->first = current;
-    } 
-    else
-    {
-      current->prev = nullptr;
-      delete current;
-    }
+    bookEntry *next = nullptr;
+    next = current->next;
+    // current->prev = nullptr;
+    // current->list = nullptr;
+    delete current->data;
+    delete current;
+    current = next;
+    
   }
+
 };

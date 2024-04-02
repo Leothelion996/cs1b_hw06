@@ -40,36 +40,22 @@ bookList* delBook(bookList* bList)
   }
   
   
-  //sets delete bookEntry to the user chosen book.
-  // int i = 1;
-  // do
-  // {
-  //   del = del->next;
-  //   i++;
-  // }while(i < input);
-
   
 for(int i = 1; i < input; i++)
   {
     del = del->next;
   }
 
-
-  // std::cout << "\ni " << i;
-  std::cout << "\ninput " << input;
-  std::cout << "\nlength-" << length << "\n";
-  std::cout << del->data->title;
-  std::cout << "\ndone\n";
-
   if (input == length)
   {
-    // del = bList->last;
-    std::cout << bList->last->data->title;
+    //runs for the last one
     bList->last = del->prev;
     del->prev->next = nullptr;
+
+    delete del->data;
+    delete del;
+
     bList->length--;
-    // std::cout << del->data->title << "\n";
-    // std::cout << bList->length <<" choice\n"<<input;
 
   }
   else if(input > 1) //this runs for all books after the first.
@@ -80,6 +66,9 @@ for(int i = 1; i < input; i++)
 
     prev->next = next;
     next->prev = prev;
+    
+    delete del->data;
+    delete del;
 
     bList->length--;
   } 
@@ -91,16 +80,11 @@ for(int i = 1; i < input; i++)
     next->prev = prev;
     bList->first = next;
 
+    delete del->data;
+    delete del;
+
     bList->length--;
   }
-  
-   
-  
-    // showBooks(bList);
-    // delete del->data;
-    // delete del;
-
-
 
   return bList;
 }
